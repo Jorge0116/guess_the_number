@@ -1,0 +1,77 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Number Guessing Game</title>
+  
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+      
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+            background-color:yellowgreen;
+        }         
+        #myDiv {
+           
+            border-radius:10px,50px,50px,10px;
+           
+
+         }
+    </style>
+</head>
+  
+<body>
+    <div id="myDiv">
+<h1>Guess The Number</h1>
+  
+<p>TRY AND BEAT THE GAME PLAYER FROM 1 - 100 </p>
+  
+<div class="form">
+    <label for="guessField">ENTER A NUMBER: </label>
+    <input type = "text" id = "guessField" class = "guessField">
+    <input type = "submit" value = "Submit guess" 
+           class = "guessSubmit" id = "submitguess">
+</div>
+</div>
+<script type = "text/javascript">
+ document.getElementById("myDiv").style.border = "thick solid #0512FF";
+ document.getElementById("myDiv").style.backgroundColor="red";
+  
+    
+    var y = Math.floor(Math.random() * 100 + 1); //CREATES A NUMBER THE USER HAS TO GUESS 
+      
+    
+    var guess = 1; // KEEPS TRACK OF HOW MANNY GUESSES
+      
+    document.getElementById("submitguess").onclick = function(){
+      
+    
+   var x = document.getElementById("guessField").value; //THE USERS INPUT  
+  
+   if(x == y) //
+   {    
+       alert("CONGRATULATIONS!!! "
+               + y + " IS RIGHT IT TOOK YOU " + guess + " GUESSES");
+   }
+   else if(x > y) 
+   {    
+       guess++;
+       alert("WRONG!!!! TRY A SMALLER NUMBER PLAYER!!");
+   }
+   else
+   {
+       guess++;
+       alert("WRONG!! TRY A GREATER NUMBER PLAYER")
+   }
+}
+
+   
+
+
+</script>
+</body>
+</html>                    
